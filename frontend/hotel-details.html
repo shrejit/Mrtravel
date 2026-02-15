@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hotel Details - MR.travel</title>
+    <link rel="stylesheet" href="styles/main.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Navbar -->
+    <nav class="navbar">
+        <div class="container">
+            <div class="nav-content">
+                <div class="nav-logo">
+                    <h1><a href="index.html">MR.travel</a></h1>
+                </div>
+                <ul class="nav-menu">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="hotels.html?city=jaipur">Hotels</a></li>
+                    <li><a href="#orders">Orders</a></li>
+                    <li><a href="#deals">Special Deals</a></li>
+                    <li><a href="#about">About US</a></li>
+                </ul>
+                <div class="nav-auth">
+                    <span id="userDisplay" class="user-display">
+                        <span id="userName">kdscoder</span>
+                        <button id="logoutBtn" class="btn-logout">Logout</button>
+                    </span>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hotel Details -->
+    <section class="hotel-details-section">
+        <div class="container">
+            <div id="hotelContent" class="hotel-details-content">
+                <!-- Content will be loaded here -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Success Modal -->
+    <div id="successModal" class="modal">
+        <div class="modal-content success-modal">
+            <h2>localhost says</h2>
+            <p id="successMessage">Booking successful</p>
+            <button class="btn-ok" onclick="closeSuccessModal()">OK</button>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-column">
+                    <h3>MR.travel</h3>
+                    <p>Your trusted travel partner</p>
+                </div>
+                <div class="footer-column">
+                    <h4>Company</h4>
+                    <ul>
+                        <li><a href="#">About Us</a></li>
+                        <li><a href="#">Careers</a></li>
+                        <li><a href="#">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h4>Support</h4>
+                    <ul>
+                        <li><a href="#">Help Center</a></li>
+                        <li><a href="#">Terms of Service</a></li>
+                        <li><a href="#">Privacy Policy</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 MR.travel. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/api.js"></script>
+    <script src="js/hotel-details.js"></script>
+</body>
+</html>

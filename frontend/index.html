@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MR.travel - The right destination for you and your family</title>
+    <link rel="stylesheet" href="styles/main.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Navbar -->
+    <nav class="navbar">
+        <div class="container">
+            <div class="nav-content">
+                <div class="nav-logo">
+                    <h1>MR.travel</h1>
+                </div>
+                <ul class="nav-menu">
+                    <li><a href="index.html" class="active">Home</a></li>
+                    <li><a href="#discover">Discover</a></li>
+                    <li><a href="#community">Community</a></li>
+                    <li><a href="#deals">Special Deals</a></li>
+                    <li><a href="#about">About US</a></li>
+                </ul>
+                <div class="nav-auth">
+                    <span id="userDisplay" class="user-display" style="display: none;">
+                        <span id="userName"></span>
+                        <button id="logoutBtn" class="btn-logout">Logout</button>
+                    </span>
+                    <button id="registerBtn" class="btn-register">Register</button>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-overlay"></div>
+        <div class="hero-content">
+            <h1 class="hero-title">The right desitination for you<br>and your family</h1>
+            <p class="hero-subtitle">Creative taglines have the capability of Capturing the attention of potential customer</p>
+            <button class="btn-cta">Start your search</button>
+        </div>
+    </section>
+
+    <!-- Search Bar -->
+    <section class="search-section">
+        <div class="container">
+            <div class="search-card">
+                <div class="search-grid">
+                    <div class="search-field">
+                        <label>Location</label>
+                        <input type="text" id="searchLocation" placeholder="Enter your destination" value="jaipur">
+                    </div>
+                    <div class="search-field">
+                        <label>Date</label>
+                        <input type="date" id="searchDate">
+                    </div>
+                    <div class="search-field">
+                        <label>Pepole</label>
+                        <input type="number" id="searchPeople" placeholder="How many People?" value="2" min="1">
+                    </div>
+                    <button class="btn-search" onclick="searchHotels()">Explore Now</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Countries to Travel -->
+    <section class="countries-section">
+        <div class="container">
+            <h2 class="section-title">Countries to travel</h2>
+            <p class="section-subtitle">choose your next destination</p>
+            
+            <div class="countries-grid" id="countriesGrid">
+                <!-- Countries will be loaded here -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Tour Packages -->
+    <section class="tour-packages-section">
+        <div class="container">
+            <h2 class="section-title">Best tour Package offers for You</h2>
+            <p class="section-subtitle">choose your next destination</p>
+            
+            <div class="packages-grid" id="packagesGrid">
+                <!-- Tour packages will be loaded here -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Destinations -->
+    <section class="destinations-section">
+        <div class="container">
+            <h2 class="section-title">Our Destinations</h2>
+            <p class="section-subtitle">choose your next destination</p>
+            
+            <div class="destinations-content">
+                <div class="destinations-list">
+                    <div class="destination-item">
+                        <span class="flag">🇮🇳</span> India
+                        <div class="destination-stats">
+                            <span>❤️ 15445</span>
+                            <span>👁️ 4588</span>
+                        </div>
+                    </div>
+                    <div class="destination-item">
+                        <span class="flag">🇦🇪</span> Dubai
+                        <div class="destination-stats">
+                            <span>❤️ 24445</span>
+                            <span>👁️ 7855</span>
+                        </div>
+                    </div>
+                    <div class="destination-item">
+                        <span class="flag">🇺🇸</span> USA
+                        <div class="destination-stats">
+                            <span>❤️ 24445</span>
+                            <span>👁️ 7855</span>
+                        </div>
+                    </div>
+                    <div class="destination-item">
+                        <span class="flag">🇻🇳</span> Vietnam
+                        <div class="destination-stats">
+                            <span>❤️ 24445</span>
+                            <span>👁️ 7855</span>
+                        </div>
+                    </div>
+                    <div class="destination-item">
+                        <span class="flag">🇷🇺</span> Russia
+                        <div class="destination-stats">
+                            <span>❤️ 24445</span>
+                            <span>👁️ 7855</span>
+                        </div>
+                    </div>
+                    <div class="destination-item">
+                        <span class="flag">🇪🇬</span> Egiypt
+                        <div class="destination-stats">
+                            <span>❤️ 24445</span>
+                            <span>👁️ 7855</span>
+                        </div>
+                    </div>
+                    <div class="destination-item">
+                        <span class="flag">🇧🇷</span> Brazil
+                        <div class="destination-stats">
+                            <span>❤️ 24445</span>
+                            <span>👁️ 7855</span>
+                        </div>
+                    </div>
+                    <button class="btn-more">More Info</button>
+                </div>
+                <div class="destinations-image">
+                    <img src="https://images.unsplash.com/photo-1436491865332-7a61a109cc05?w=600" alt="Travel Destination">
+                    <div class="destinations-info">
+                        <p>Included: Air ticket, Hotel, Breakfast, Tours, Airport transfers</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Newsletter -->
+    <section class="newsletter-section">
+        <div class="container">
+            <div class="newsletter-card">
+                <h2>Subscribe &<br>get special discount</h2>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit Cupiditate nulla ipsa quo</p>
+                <div class="newsletter-form">
+                    <input type="email" placeholder="Your email">
+                    <button>Subscribe</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-column">
+                    <h3>MR.travel</h3>
+                    <p>Your trusted travel partner</p>
+                </div>
+                <div class="footer-column">
+                    <h4>Company</h4>
+                    <ul>
+                        <li><a href="#">About Us</a></li>
+                        <li><a href="#">Careers</a></li>
+                        <li><a href="#">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h4>Support</h4>
+                    <ul>
+                        <li><a href="#">Help Center</a></li>
+                        <li><a href="#">Terms of Service</a></li>
+                        <li><a href="#">Privacy Policy</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h4>Follow Us</h4>
+                    <div class="social-links">
+                        <a href="#">Facebook</a>
+                        <a href="#">Twitter</a>
+                        <a href="#">Instagram</a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 MR.travel. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Register Modal -->
+    <div id="registerModal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2>Register</h2>
+            <form id="registerForm">
+                <input type="text" id="regName" placeholder="Full Name" required>
+                <input type="email" id="regEmail" placeholder="Email" required>
+                <input type="password" id="regPassword" placeholder="Password" required>
+                <button type="submit" class="btn-submit">Register</button>
+            </form>
+            <p class="modal-switch">Already have an account? <a href="#" onclick="switchToLogin()">Login</a></p>
+        </div>
+    </div>
+
+    <!-- Login Modal -->
+    <div id="loginModal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2>Login</h2>
+            <form id="loginForm">
+                <input type="email" id="loginEmail" placeholder="Email" required>
+                <input type="password" id="loginPassword" placeholder="Password" required>
+                <button type="submit" class="btn-submit">Login</button>
+            </form>
+            <p class="modal-switch">Don't have an account? <a href="#" onclick="switchToRegister()">Register</a></p>
+        </div>
+    </div>
+
+    <script src="js/api.js"></script>
+    <script src="js/main.js"></script>
+</body>
+</html>

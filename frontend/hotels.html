@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hotels in Jaipur - MR.travel</title>
+    <link rel="stylesheet" href="styles/main.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Navbar -->
+    <nav class="navbar">
+        <div class="container">
+            <div class="nav-content">
+                <div class="nav-logo">
+                    <h1><a href="index.html">MR.travel</a></h1>
+                </div>
+                <ul class="nav-menu">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="#orders">Orders</a></li>
+                    <li><a href="#deals">Special Deals</a></li>
+                    <li><a href="#about">About US</a></li>
+                </ul>
+                <div class="nav-auth">
+                    <span id="userDisplay" class="user-display">
+                        <span id="userName">kdscoder</span>
+                        <button id="logoutBtn" class="btn-logout">Logout</button>
+                    </span>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Search Hero -->
+    <section class="search-hero">
+        <div class="hero-overlay"></div>
+        <div class="hero-content">
+            <h1 class="hero-title">The right desitination for you<br>and your family</h1>
+            <p class="hero-subtitle">Creative taglines have the capability of Capturing the attention of potential customer</p>
+        </div>
+        
+        <!-- Search Bar -->
+        <div class="container">
+            <div class="search-card">
+                <div class="search-grid">
+                    <div class="search-field">
+                        <label>Location</label>
+                        <input type="text" id="searchLocation" placeholder="jaipur" value="jaipur">
+                    </div>
+                    <div class="search-field">
+                        <label>Check-In</label>
+                        <input type="date" id="checkInDate">
+                    </div>
+                    <div class="search-field">
+                        <label>Check-Out</label>
+                        <input type="date" id="checkOutDate">
+                    </div>
+                    <div class="search-field">
+                        <label>Pepole</label>
+                        <input type="number" id="searchPeople" value="2" min="1">
+                    </div>
+                    <button class="btn-search" onclick="filterHotels()">Explore Now</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Hotels Listing -->
+    <section class="hotels-listing-section">
+        <div class="container">
+            <div class="hotels-layout">
+                <!-- Filters Sidebar -->
+                <aside class="filters-sidebar">
+                    <div class="filter-header">
+                        <h3>🔽 Filter</h3>
+                    </div>
+
+                    <div class="filter-group">
+                        <h4>Room Amenities</h4>
+                        <label class="checkbox-label">
+                            <input type="checkbox" name="amenity" value="Swimming Pool"> Swimming Pool
+                        </label>
+                        <label class="checkbox-label">
+                            <input type="checkbox" name="amenity" value="Gym"> Gym
+                        </label>
+                        <label class="checkbox-label">
+                            <input type="checkbox" name="amenity" value="Spa"> Spa
+                        </label>
+                        <label class="checkbox-label">
+                            <input type="checkbox" name="amenity" value="Bar"> Bar
+                        </label>
+                        <label class="checkbox-label">
+                            <input type="checkbox" name="amenity" value="Conference Hall"> Conference Hall
+                        </label>
+                        <label class="checkbox-label">
+                            <input type="checkbox" name="amenity" value="Wi-Fi"> Wi-Fi
+                        </label>
+                        <label class="checkbox-label">
+                            <input type="checkbox" name="amenity" value="Parking" checked> Parking
+                        </label>
+                        <label class="checkbox-label">
+                            <input type="checkbox" name="amenity" value="Elevator"> Elevator
+                        </label>
+                        <label class="checkbox-label">
+                            <input type="checkbox" name="amenity" value="Free Wi-Fi"> Free Wi-Fi
+                        </label>
+                        <label class="checkbox-label">
+                            <input type="checkbox" name="amenity" value="Outdoor Pool"> Outdoor Pool
+                        </label>
+                        <label class="checkbox-label">
+                            <input type="checkbox" name="amenity" value="Free Parking"> Free Parking
+                        </label>
+                        <label class="checkbox-label">
+                            <input type="checkbox" name="amenity" value="Room Service"> Room Service
+                        </label>
+                        <label class="checkbox-label">
+                            <input type="checkbox" name="amenity" value="Laundry"> Laundry
+                        </label>
+                        <label class="checkbox-label">
+                            <input type="checkbox" name="amenity" value="Tennis Court"> Tennis Court
+                        </label>
+                        <label class="checkbox-label">
+                            <input type="checkbox" name="amenity" value="Pool"> Pool
+                        </label>
+                        <label class="checkbox-label">
+                            <input type="checkbox" name="amenity" value="Indoor Pool"> Indoor Pool
+                        </label>
+                    </div>
+
+                    <div class="filter-group">
+                        <h4>Price per night</h4>
+                        <label class="checkbox-label">
+                            <input type="radio" name="price" value="0-1000"> Under 1000 Rs
+                        </label>
+                        <label class="checkbox-label">
+                            <input type="radio" name="price" value="1000-5000"> Rs 1000 - Rs 5000
+                        </label>
+                        <label class="checkbox-label">
+                            <input type="radio" name="price" value="5000-10000"> Rs 5000 - Rs 10000
+                        </label>
+                        <label class="checkbox-label">
+                            <input type="radio" name="price" value="10000+"> Over Rs 10000
+                        </label>
+                    </div>
+                </aside>
+
+                <!-- Hotels List -->
+                <main class="hotels-main">
+                    <div class="hotels-header">
+                        <h2>🏨 Hotels -> <span id="cityName">jaipur</span></h2>
+                    </div>
+
+                    <div id="hotelsContainer" class="hotels-grid">
+                        <!-- Hotels will be loaded here -->
+                    </div>
+
+                    <div id="loadingSpinner" class="loading-spinner" style="display: none;">
+                        <div class="spinner"></div>
+                        <p>Loading hotels...</p>
+                    </div>
+
+                    <div id="noResults" class="no-results" style="display: none;">
+                        <p>No hotels found matching your criteria</p>
+                        <button onclick="clearFilters()">Clear Filters</button>
+                    </div>
+                </main>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-column">
+                    <h3>MR.travel</h3>
+                    <p>Your trusted travel partner</p>
+                </div>
+                <div class="footer-column">
+                    <h4>Company</h4>
+                    <ul>
+                        <li><a href="#">About Us</a></li>
+                        <li><a href="#">Careers</a></li>
+                        <li><a href="#">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h4>Support</h4>
+                    <ul>
+                        <li><a href="#">Help Center</a></li>
+                        <li><a href="#">Terms of Service</a></li>
+                        <li><a href="#">Privacy Policy</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 MR.travel. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/api.js"></script>
+    <script src="js/hotels.js"></script>
+</body>
+</html>
